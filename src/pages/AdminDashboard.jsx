@@ -6,7 +6,7 @@ const AdminDashboard = () => {
   const { data: finalTests, isLoading, error } = useQuery({
     queryKey: ['finalTests'],
     queryFn: async () => {
-      const response = await fetch('https://your-replit-backend-url/admin/final-tests', {
+      const response = await fetch('https://d1e6a0dc-df57-4153-a3cf-c21adae61f96-00-2zdfsm20qt7wz.sisko.replit.dev/admin/final-tests', {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` },
       });
       if (!response.ok) throw new Error('Failed to fetch final tests');
@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const handleDownloadMarks = async (testId) => {
     try {
-      const response = await fetch(`https://your-replit-backend-url/admin/final-tests/${testId}/marks`, {
+      const response = await fetch(`https://d1e6a0dc-df57-4153-a3cf-c21adae61f96-00-2zdfsm20qt7wz.sisko.replit.dev/admin/final-tests/${testId}/marks`, {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` },
       });
       if (!response.ok) throw new Error('Failed to download marks');
