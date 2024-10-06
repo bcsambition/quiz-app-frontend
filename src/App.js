@@ -11,7 +11,7 @@ const App = () => {
 
   const login = async () => {
     try {
-      const res = await axios.post('https://your-replit-server-url/login', { email, password });
+      const res = await axios.post('https://d1e6a0dc-df57-4153-a3cf-c21adae61f96-00-2zdfsm20qt7wz.sisko.replit.dev/login', { email, password });
       setToken(res.data.token);
     } catch (err) {
       console.log(err);
@@ -21,7 +21,7 @@ const App = () => {
 
   const fetchTests = async () => {
     try {
-      const res = await axios.get('https://your-replit-server-url/tests', {
+      const res = await axios.get('https://d1e6a0dc-df57-4153-a3cf-c21adae61f96-00-2zdfsm20qt7wz.sisko.replit.dev/tests', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTests(res.data);
@@ -32,7 +32,7 @@ const App = () => {
 
   const takeTest = async (testId) => {
     try {
-      await axios.post(`https://your-replit-server-url/take-test/${testId}`, {
+      await axios.post(`https://d1e6a0dc-df57-4153-a3cf-c21adae61f96-00-2zdfsm20qt7wz.sisko.replit.dev/take-test/${testId}`, {
         score
       }, {
         headers: { Authorization: `Bearer ${token}` }
