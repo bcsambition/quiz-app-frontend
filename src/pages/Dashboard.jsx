@@ -9,7 +9,7 @@ const Dashboard = () => {
   const { data: tests, isLoading, error } = useQuery({
     queryKey: ['tests'],
     queryFn: async () => {
-      const response = await fetch('https://your-replit-backend-url/tests', {
+      const response = await fetch('https://d1e6a0dc-df57-4153-a3cf-c21adae61f96-00-2zdfsm20qt7wz.sisko.replit.dev/tests', {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
       });
       if (!response.ok) throw new Error('Failed to fetch tests');
